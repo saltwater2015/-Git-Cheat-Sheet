@@ -128,10 +128,16 @@ $ git init
 $ git status
 ```
 
-##### 显示与上次提交版本文件的不同：
+##### 显示当前工作区和暂存区的差别：
 ```
 $ git diff
 ```
+
+##### 显示当前工作区和当前版本的差别：
+```
+$ git diff HEAD
+```
+
 
 ##### 把当前所有修改添加到下次提交中：
 ```
@@ -163,7 +169,7 @@ $ git commit -m 'message here'
 git commit --date="`date --date='n day ago'`" -am "Commit Message"
 ```
 
-##### 修改上次提交
+##### 修改上次提交，提交缓存区的文件，如果从上次修改以来，缓存区没有变化，则只修改提交信息
 <em><sub>请勿修改已发布的提交记录!</sub></em>
 ```
 $ git commit --amend
@@ -336,12 +342,12 @@ $ git fetch <remote>
 $ git remote pull <remote> <url>
 ```
 
-##### 将远程端版本合并到本地版本中：
+##### 将远程端版本合并到本地版本中，pull相当于fetch和merge的结合：
 ```
 $ git pull origin master
 ```
 
-##### 以rebase方式将远端分支与本地合并：
+##### 以rebase方式将远端分支与本地合并，加上本参数后，相当于pull和rebase的结合：
 ```
 git pull --rebase <remote> <branch>
 ```
@@ -425,7 +431,7 @@ squash <commit_id3>
 ---
 ###撤销
 
-##### 放弃工作目录下的所有修改：
+##### 放弃工作目录下的所有修改（本操作是有一定的危险性的）：
 ```
 $ git reset --hard HEAD
 ```
