@@ -317,6 +317,8 @@ $ git tag -a <tag-name>
 ---
 ###更新与发布
 
+##### 一般情况下, &lt;remote&gt;命名为origin
+
 ##### 列出当前配置的远程端：
 ```
 $ git remote -v
@@ -330,6 +332,11 @@ $ git remote show <remote>
 ##### 添加新的远程端：
 ```
 $ git remote add <remote> <url>
+```
+
+##### 取消远程客户端关联:
+```
+$ git remote remove <remote>
 ```
 
 ##### 下载远程端版本，但不合并到HEAD中：
